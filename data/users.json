@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "name": "Lorin Demo",
+    "email": "demo@shitayeb.app",
+    "password": "123456",
+    "plan": "Pro",
+    "createdAt": "2026-04-22"
+  }
+]

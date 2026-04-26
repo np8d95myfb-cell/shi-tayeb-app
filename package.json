@@ -1,0 +1,14 @@
+{
+  "name": "shi-tayeb-full-app",
+  "version": "2.0.0",
+  "description": "Shi Tayeb AI recipe video app - local full user app",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

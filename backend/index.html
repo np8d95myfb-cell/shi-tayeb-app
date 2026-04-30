@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shi Tayeb | منصة فيديوهات الطبخ بالذكاء الاصطناعي</title>
+
+<style>
+:root{
+  --bg:#141629;
+  --bg2:#1d2038;
+  --card:#282c4a;
+  --card2:#32375c;
+  --text:#f4f3ff;
+  --muted:#b9bad6;
+  --purple:#9b5cff;
+  --pink:#f06fa4;
+  --gold:#f5c542;
+  --green:#56d39b;
+  --border:#454a75;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(180deg,#111326,#1b1e35);
+  color:var(--text);
+}
+a{text-decoration:none;color:inherit}
+.container{max-width:1180px;margin:auto;padding:22px}
+.topbar{
+  position:sticky;top:0;z-index:20;
+  background:rgba(20,22,41,.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+.nav{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:16px;
+}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:24px}
+.logo{
+  width:52px;height:52px;border-radius:16px;
+  display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  box-shadow:0 12px 30px rgba(155,92,255,.3);
+}
+.points{
+  display:flex;align-items:center;gap:10px;
+  background:var(--card);border:1px solid var(--border);
+  padding:12px 16px;border-radius:18px;font-weight:800;
+}
+.btn{
+  border:0;border-radius:16px;padding:13px 18px;
+  color:white;background:var(--card2);cursor:pointer;font-weight:800;
+}
+.btn.primary{background:linear-gradient(135deg,var(--purple),var(--pink))}
+.btn.gold{background:linear-gradient(135deg,#d59b20,var(--gold));color:#191919}
+.hero{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center;
+  padding:46px 0;
+}
+.hero-box,.panel{
+  background:rgba(40,44,74,.75);
+  border:1px solid var(--border);
+  border-radius:30px;padding:34px;
+}
+h1{font-size:46px;line-height:1.25;margin:0 0 18px}
+h2{font-size:34px;margin:48px 0 20px}
+p{color:var(--muted);line-height:1.9;font-size:18px}
+.hero-img{
+  min-height:370px;border-radius:28px;
+  background:
+  linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.55)),
+  url("https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1000&q=80");
+  background-size:cover;background-position:center;
+  display:flex;align-items:end;padding:24px;
+}
+.badge{display:inline-block;background:rgba(245,197,66,.16);color:var(--gold);border:1px solid rgba(245,197,66,.35);padding:8px 14px;border-radius:999px;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tool{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;padding:24px;
+  min-height:160px;display:flex;flex-direction:column;justify-content:space-between;
+}
+.icon{font-size:38px}
+.tool h3,.price h3,.video h3{font-size:21px;margin:12px 0 8px}
+.tool p,.video p,.price p{font-size:15px;margin:0;color:var(--muted)}
+.videos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.video{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:26px;overflow:hidden;
+}
+.video img{width:100%;height:190px;object-fit:cover;display:block}
+.video .content{padding:18px}
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.price{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:28px;padding:26px;
+}
+.price.featured{border-color:var(--pink);box-shadow:0 0 0 2px rgba(240,111,164,.25)}
+.price .amount{font-size:34px;font-weight:900;margin:14px 0}
+ul{padding:0;margin:18px 0;list-style:none}
+li{margin:12px 0;color:var(--muted)}
+li:before{content:"✓ ";color:var(--green);font-weight:bold}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:24px}
+.footer{margin-top:50px;border-top:1px solid var(--border);padding:28px 0;color:var(--muted)}
+@media(max-width:850px){
+  .hero{grid-template-columns:1fr}
+  .grid,.videos,.pricing,.steps{grid-template-columns:1fr}
+  h1{font-size:34px}
+  .nav{flex-wrap:wrap}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo">🍽️</div>
+      <div>
+        Shi Tayeb
+        <div style="font-size:13px;color:var(--muted);font-weight:400">منصة فيديوهات الطبخ بالذكاء الاصطناعي</div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:10px;align-items:center">
+      <div class="points">⭐ 0 نقطة</div>
+      <button class="btn gold">شراء نقاط</button>
+      <button class="btn primary">اشترك الآن</button>
+    </div>
+  </div>
+</div>
+
+<main class="container">
+
+<section class="hero">
+  <div class="hero-box">
+    <span class="badge">نسخة تجريبية جاهزة للعرض</span>
+    <h1>حوّلي وصفتك إلى فيديو طبخ احترافي خلال دقائق ✨</h1>
+    <p>
+      Shi Tayeb يساعد صناع المحتوى والمطاعم والبراندات الغذائية على تحويل الوصفات إلى
+      أفكار فيديو، مشاهد تصوير، تعليق صوتي، وكابشن جاهز للنشر.
+    </p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <button class="btn primary">ابدئي إنشاء فيديو</button>
+      <button class="btn">شاهدي المكتبة</button>
+      <button class="btn">من نحن</button>
+    </div>
+  </div>
+
+  <div class="hero-img">
+    <div>
+      <span class="badge">محتوى طبخ + إعلان + وصفات</span>
+      <h3>مكتبة جاهزة لفيديوهات الطبخ</h3>
+    </div>
+  </div>
+</section>
+
+<h2>التطبيقات والأدوات</h2>
+<section class="grid">
+  <div class="tool"><div class="icon">🎬</div><h3>توليد فيديو طبخ</h3><p>تحويل الوصفة إلى سيناريو ومشاهد فيديو.</p></div>
+  <div class="tool"><div class="icon">🖼️</div><h3>توليد صورة</h3><p>صور أطباق ومنتجات بجودة إعلانية.</p></div>
+  <div class="tool"><div class="icon">🍲</div><h3>توليد وصفة</h3><p>عنوان، مكونات، طريقة، وكابشن.</p></div>
+  <div class="tool"><div class="icon">✨</div><h3>تعديل صورة</h3><p>تحسين المشهد، الإضاءة، والخلفية.</p></div>
+  <div class="tool"><div class="icon">🎙️</div><h3>تعليق صوتي</h3><p>نص تعليق جاهز للفيديو.</p></div>
+  <div class="tool"><div class="icon">📱</div><h3>ريلز وسوشيال</h3><p>أفكار جاهزة لإنستغرام وتيك توك.</p></div>
+  <div class="tool"><div class="icon">📦</div><h3>قوالب إعلانية</h3><p>قوالب لمنتجات ومطاعم وبراندات.</p></div>
+  <div class="tool"><div class="icon">📚</div><h3>مكتبة جاهزة</h3><p>فيديوهات وأفكار طبخ قابلة للاستخدام.</p></div>
+</section>
+
+<h2>مكتبة فيديوهات الطبخ الجاهزة</h2>
+<section class="videos">
+  <div class="video">
+    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80">
+    <div class="content"><h3>بيتزا منزلية</h3><p>مشاهد تقطيع، صوص، جبنة، وفرن.</p></div>
+  </div>
+  <div class="video">
+    <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=80">
+    <div class="content"><h3>سلطة صحية</h3><p>لقطات منعشة مناسبة للريلز.</p></div>
+  </div>
+  <div class="video">
+    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=900&q=80">
+    <div class="content"><h3>طبق فاخر</h3><p>ستايل إعلاني للمطاعم والبراندات.</p></div>
+  </div>
+</section>
+
+<h2>كيف يعمل Shi Tayeb؟</h2>
+<section class="steps">
+  <div class="step"><h3>1. أدخلي الوصفة</h3><p>اكتبي المكونات أو ارفعي صورة الطبق.</p></div>
+  <div class="step"><h3>2. اختاري الستايل</h3><p>مطبخ فاخر، وصفة صحية، إعلان، أو فيديو قصير.</p></div>
+  <div class="step"><h3>3. استلمي النتيجة</h3><p>مشاهد، سكريبت، تعليق صوتي، وكابشن جاهز.</p></div>
+</section>
+
+<h2>الباقات الشهرية</h2>
+<section class="pricing">
+  <div class="price">
+    <h3>الباقة المجانية</h3>
+    <div class="amount">0€</div>
+    <p>للتجربة الأولى</p>
+    <ul>
+      <li>0 نقطة عند البداية</li>
+      <li>استعراض المكتبة</li>
+      <li>تجربة الأدوات الأساسية</li>
+    </ul>
+    <button class="btn">ابدأ مجاناً</button>
+  </div>
+
+  <div class="price featured">
+    <h3>باقة صانع المحتوى</h3>
+    <div class="amount">19€ / شهر</div>
+    <p>مناسبة للريلز والتيك توك</p>
+    <ul>
+      <li>نقاط شهرية</li>
+      <li>أفكار فيديو غير محدودة</li>
+      <li>سكريبت وتعليق صوتي</li>
+      <li>مكتبة فيديوهات طبخ</li>
+    </ul>
+    <button class="btn primary">اشترك الآن</button>
+  </div>
+
+  <div class="price">
+    <h3>باقة البراندات</h3>
+    <div class="amount">49€ / شهر</div>
+    <p>للمطاعم والشركات</p>
+    <ul>
+      <li>قوالب إعلانية</li>
+      <li>محتوى منتجات</li>
+      <li>أولوية في التوليد</li>
+      <li>استخدام تجاري</li>
+    </ul>
+    <button class="btn gold">اختيار الباقة</button>
+  </div>
+</section>
+
+<h2>لمحة عنا</h2>
+<section class="panel">
+  <p>
+    Shi Tayeb هو مشروع يهدف إلى تسهيل صناعة محتوى الطبخ باستخدام الذكاء الاصطناعي.
+    الفكرة بسيطة: أي وصفة أو صورة طبق يمكن تحويلها إلى محتوى جاهز للنشر، مع سيناريو
+    واضح، مشاهد تصوير، نص تعليق، وأفكار إعلانية تساعد صناع المحتوى والبراندات على الظهور بشكل احترافي.
+  </p>
+</section>
+
+<h2>تواصل معنا</h2>
+<section class="panel">
+  <p>للتعاون أو تجربة النسخة الأولى: contact@shitayeb.com</p>
+  <button class="btn primary">طلب تجربة</button>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    © 2026 Shi Tayeb — منصة فيديوهات الطبخ بالذكاء الاصطناعي
+  </div>
+</footer>
+
+</body>
+</html>

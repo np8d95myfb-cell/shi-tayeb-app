@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "وصفات ستي",
+    "key": "grandma",
+    "description": "طابع دافئ، وصفات تقليدية، لمسة بيتية تشبه وصفات ستي وأمي.",
+    "promptHint": "وصفة ستي، مائدة بيتية، إضاءة دافئة، تقديم حميمي",
+    "cover": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": 2,
+    "title": "مطبخ فاخر",
+    "key": "luxury",
+    "description": "ديكور نظيف، مطبخ أبيض، إضاءة ناعمة، لمسة راقية للإعلانات.",
+    "promptHint": "مطبخ أبيض فاخر، تصوير قريب، إضاءة ناعمة، حركة بطيئة",
+    "cover": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": 3,
+    "title": "وصفات صحية",
+    "key": "healthy",
+    "description": "ألوان منعشة، مكونات خفيفة، أسلوب بسيط وواضح للصحة والرشاقة.",
+    "promptHint": "سلطة صحية، ألوان منعشة، خلفية نظيفة، تصوير حديث",
+    "cover": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=80"
+  }
+]

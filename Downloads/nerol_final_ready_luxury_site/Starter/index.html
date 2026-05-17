@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nerol AI Academy — Starter 75€ Visual Course</title>
+<style>
+:root {
+  --bg:#050403;
+  --card:#12100b;
+  --card2:#19150d;
+  --gold:#d8aa3f;
+  --gold2:#ffe9a3;
+  --text:#fff8e8;
+  --muted:#d9c9a8;
+  --line:rgba(216,170,63,.35);
+  --green:#65e09a;
+  --red:#ff6b6b;
+  --blue:#7fb7ff;
+  --shadow:0 22px 75px rgba(216,170,63,.13);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Tahoma, Arial, sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(216,170,63,.22), transparent 29%),
+    radial-gradient(circle at 90% 12%, rgba(255,233,163,.10), transparent 30%),
+    linear-gradient(180deg,#070604,#000 45%,#050403);
+}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1220px,92%);margin:auto}
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(5,4,3,.86);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:15px 0}
+.brand{direction:ltr;display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:3px}
+.mark{width:42px;height:42px;border-radius:14px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold2);box-shadow:0 0 25px rgba(216,170,63,.25);font-size:24px}
+.links{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.links a{font-size:13px;color:var(--muted);padding:8px 10px;border-radius:999px;border:1px solid transparent}
+.links a:hover{color:var(--gold2);border-color:var(--line);background:rgba(216,170,63,.08)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:999px;font-weight:900;background:linear-gradient(135deg,var(--gold),#fff0a8,var(--gold));color:#130e05;box-shadow:0 14px 34px rgba(216,170,63,.24)}
+.ghost{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:999px;border:1px solid var(--line);color:var(--gold2);background:rgba(255,255,255,.04);font-weight:800}
+.hero{min-height:90vh;display:grid;grid-template-columns:1.04fr .96fr;gap:34px;align-items:center;padding:60px 0 45px}
+.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);color:var(--gold2);background:rgba(216,170,63,.08);padding:9px 15px;border-radius:999px;font-weight:900;margin-bottom:18px}
+h1{font-size:clamp(42px,8vw,86px);margin:0;line-height:1.02;letter-spacing:-1px}
+h1 span{display:block;background:linear-gradient(135deg,#fff,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:#eee1c3;font-size:20px;line-height:1.9;margin:24px 0 30px;max-width:780px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-card{border:1px solid var(--line);border-radius:30px;overflow:hidden;background:#000;box-shadow:var(--shadow);position:relative;min-height:560px}
+.hero-card img{width:100%;height:100%;object-fit:cover;display:block;opacity:.96}
+.price{position:absolute;top:18px;left:18px;border:1px solid var(--gold);background:rgba(0,0,0,.72);border-radius:18px;padding:14px 18px;text-align:center;color:var(--gold2)}
+.price strong{display:block;font-size:38px}
+.section{padding:48px 0;border-top:1px solid rgba(216,170,63,.14)}
+.eyebrow{color:var(--gold);font-weight:900;letter-spacing:2px;text-transform:uppercase;font-size:13px}
+h2{font-size:clamp(30px,4vw,48px);margin:8px 0;color:var(--gold2)}
+.sub{color:var(--muted);line-height:1.85;margin:0;font-size:17px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{border:1px solid var(--line);border-radius:26px;padding:23px;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025));box-shadow:0 18px 55px rgba(0,0,0,.24)}
+.card h3{margin:0 0 12px;font-size:22px;color:#fff}
+.card p,.card li{color:var(--muted);line-height:1.85}
+.icon{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;border:1px solid var(--line);color:var(--gold2);background:rgba(216,170,63,.08);font-size:24px;margin-bottom:14px}
+.workflow{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:24px}
+.flow{position:relative;border:1px solid var(--line);border-radius:22px;padding:18px;background:rgba(255,255,255,.035);min-height:155px}
+.flow strong{display:block;color:var(--gold2);font-size:19px;margin:8px 0}
+.flow span{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(216,170,63,.13);border:1px solid var(--gold);color:var(--gold2);font-weight:900;direction:ltr}
+.lesson{padding:52px 0;border-top:1px solid rgba(216,170,63,.16)}
+.lesson-head{margin-bottom:24px}
+.split{display:grid;grid-template-columns:.95fr 1.05fr;gap:24px;align-items:stretch}
+.visual{border:1px solid var(--line);border-radius:28px;background:radial-gradient(circle at 20% 10%,rgba(216,170,63,.18),transparent 35%),rgba(255,255,255,.035);padding:22px;min-height:430px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:16px}
+.visual-title{display:flex;align-items:center;justify-content:space-between;color:var(--gold2);font-weight:900}
+.phone{width:min(280px,100%);margin:auto;border:10px solid #0b0b0b;border-radius:34px;background:#111;box-shadow:0 20px 55px rgba(0,0,0,.55);overflow:hidden}
+.phone-screen{aspect-ratio:9/16;background:linear-gradient(180deg,#352715,#0e0b07);position:relative;padding:16px;display:flex;flex-direction:column;justify-content:space-between}
+.video-thumb{height:63%;border-radius:18px;background:linear-gradient(135deg,#5b3a1c,#1b140b);border:1px solid rgba(255,233,163,.25);display:grid;place-items:center;text-align:center;color:#fff3cb;font-weight:900}
+.video-ui{display:grid;gap:8px}
+.ui-line{height:10px;border-radius:999px;background:rgba(255,255,255,.18)}
+.ui-line.short{width:70%}
+.shot-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.shot{border:1px solid rgba(216,170,63,.32);border-radius:18px;background:#0b0a07;min-height:145px;padding:14px;display:flex;flex-direction:column;justify-content:space-between}
+.shot .mini{height:80px;border-radius:14px;background:linear-gradient(135deg,#b4772e,#25170b);display:grid;place-items:center;color:#fff;font-size:26px}
+.content{display:grid;gap:16px}
+.step{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;padding:15px;border:1px solid rgba(216,170,63,.22);border-radius:18px;background:rgba(255,255,255,.025)}
+.num{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(216,170,63,.12);border:1px solid var(--gold);color:var(--gold2);font-weight:900;direction:ltr}
+.prompt{direction:ltr;text-align:left;background:#080806;border:1px solid var(--line);border-radius:18px;padding:18px;color:#ffeec4;line-height:1.7;font-family:Arial,sans-serif;white-space:pre-wrap}
+.ar-prompt{direction:rtl;text-align:right;font-family:Tahoma,Arial,sans-serif}
+.check{list-style:none;padding:0;margin:0}
+.check li{padding:9px 0;border-bottom:1px solid rgba(216,170,63,.13)}
+.check li:before{content:"✓";color:var(--green);font-weight:900;margin-left:8px}
+.danger li:before{content:"✕";color:var(--red)}
+.note{border:1px solid var(--line);border-radius:20px;background:rgba(216,170,63,.08);padding:18px;color:#fff0c7;line-height:1.8}
+.table{width:100%;border-collapse:collapse;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.table th,.table td{border:1px solid rgba(216,170,63,.18);padding:14px;color:var(--muted);line-height:1.6}
+.table th{color:var(--gold2);background:rgba(216,170,63,.10)}
+.cta{margin:50px 0 70px;border:1px solid var(--gold);border-radius:30px;padding:34px;background:radial-gradient(circle at 20% 20%, rgba(216,170,63,.20), transparent 32%),rgba(255,255,255,.035);box-shadow:var(--shadow);display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center}
+.footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:var(--muted)}
+@media(max-width:1050px){.hero,.split,.cta{grid-template-columns:1fr}.workflow{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr 1fr}.hero-card{min-height:auto}.links{display:none}}
+@media(max-width:650px){.workflow,.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body id="top">
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand"><div class="mark">N</div><div>NEROL AI ACADEMY</div></div>
+    <div class="links">
+      <a href="#workflow">Workflow</a>
+      <a href="#reference">Reference</a>
+      <a href="#chatgpt">ChatGPT</a>
+      <a href="#picasso">Picasso</a>
+      <a href="#capcut">CapCut</a>
+      <a href="#publish">Publish</a>
+    </div>
+    <a class="ghost" href="#workflow">ابدأ</a>
+  </div>
+</nav>
+
+<header class="wrap hero">
+  <div>
+    <div class="badge">✨ Starter Course — 75€</div>
+    <h1><span>AI Food Content</span>Visual Workflow</h1>
+    <p class="lead">هنا تتعلم الطريقة العملية: تشاهد فيديو يعجبك، تقسمه إلى لقطات، تصنع صور مشابهة لكن بديكورك وستايلك، تحولها لفيديو في بيكاسو، ثم تجمعها في CapCut وتنشرها بشكل احترافي.</p>
+    <div class="actions">
+      <a class="btn" href="#workflow">ابدأ الخطوات</a>
+      <a class="ghost" href="#chatgpt">البرومبتات الجاهزة</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <img src="assets/DB771F02-41C9-45B0-ADDF-D1D71C233D53.jpeg" alt="Nerol AI Academy">
+    <div class="price"><span>Starter</span><strong>75€</strong></div>
+  </div>
+</header>
+
+<section class="wrap section" id="workflow">
+  <span class="eyebrow">Main Workflow</span>
+  <h2>الطريقة الكاملة لصناعة فيديو طبخ AI</h2>
+  <p class="sub">لا ننسخ فيديو غيرنا. نستخدمه كـ Reference لفهم اللقطات، ثم نصنع نسخة أصلية خاصة بنا بديكور مختلف وستايل Nerol.</p>
+  <div class="workflow">
+    <div class="flow"><span>1</span><strong>اختاري فيديو يعجبك</strong><p>من TikTok أو Reels، فقط كمرجع للفكرة واللقطات.</p></div>
+    <div class="flow"><span>2</span><strong>قسّميه إلى لقطات</strong><p>لقطة مكونات، خلط، سكب، فرن، نتيجة نهائية.</p></div>
+    <div class="flow"><span>3</span><strong>اصنعي صور جديدة</strong><p>نفس نوع اللقطة، لكن بديكورك، ألوانك، وستايلك.</p></div>
+    <div class="flow"><span>4</span><strong>حرّكيها في Picasso</strong><p>ارفعي كل صورة واكتبي وصف الحركة.</p></div>
+    <div class="flow"><span>5</span><strong>اجمعيها في CapCut</strong><p>مونتاج، نصوص، موسيقى، كابشن، نشر.</p></div>
+  </div>
+</section>
+
+<main class="wrap">
+
+<section class="lesson" id="reference">
+  <div class="lesson-head">
+    <span class="eyebrow">Step 1</span>
+    <h2>اختيار فيديو Reference بدون نسخ</h2>
+    <p class="sub">الفيديو الذي يعجبك هو مرجع فقط. الهدف أن تفهمي ترتيب اللقطات وليس أن تنسخي نفس الفيديو.</p>
+  </div>
+  <div class="split">
+    <div class="visual">
+      <div class="visual-title"><span>مثال بصري</span><span>📱</span></div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="video-thumb">TikTok / Reels<br>Recipe Video</div>
+          <div class="video-ui">
+            <div class="ui-line"></div>
+            <div class="ui-line short"></div>
+            <div class="ui-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="card">
+        <h3>ماذا تراقبين بالفيديو؟</h3>
+        <ul class="check">
+          <li>أول لقطة: هل هي النتيجة النهائية أم المكونات؟</li>
+          <li>زاوية التصوير: من فوق، قريبة، جانبية، أو POV.</li>
+          <li>ترتيب الخطوات: مكونات → خلط → طبخ → تقديم.</li>
+          <li>الحركات المهمة: سكب، تقطيع، رش، تقريب للكاميرا.</li>
+          <li>مدة كل لقطة: هل سريعة أم طويلة؟</li>
+        </ul>
+      </div>
+      <div class="note">مهم: لا تأخذي نفس الفيديو ولا نفس لقطاته تماماً. خذي الفكرة فقط واصنعي صورك الخاصة بديكور مختلف.</div>
+    </div>
+  </div>
+</section>
+
+<section class="lesson" id="shots">
+  <div class="lesson-head">
+    <span class="eyebrow">Step 2</span>
+    <h2>قسّمي الفيديو إلى لقطات تحتاجينها</h2>
+    <p class="sub">قبل ما تفتحي ChatGPT، اكتبي قائمة اللقطات. هذا يجعل النتيجة مرتبة ومهنية.</p>
+  </div>
+  <div class="split">
+    <div class="visual">
+      <div class="visual-title"><span>Shot List</span><span>🎬</span></div>
+      <div class="shot-grid">
+        <div class="shot"><div class="mini">🍅</div><strong>1. Ingredients</strong><small>مكونات على الطاولة</small></div>
+        <div class="shot"><div class="mini">🥣</div><strong>2. Mixing</strong><small>خلط بالمعلقة</small></div>
+        <div class="shot"><div class="mini">🔥</div><strong>3. Cooking</strong><small>فرن أو مقلاة</small></div>
+        <div class="shot"><div class="mini">✨</div><strong>4. Final</strong><small>لقطة تقديم فخمة</small></div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="card">
+        <h3>قالب قائمة اللقطات</h3>
+        <table class="table">
+          <tr><th>اللقطة</th><th>ماذا نحتاج؟</th><th>الحركة لاحقاً</th></tr>
+          <tr><td>1</td><td>المكونات مرتبة</td><td>كاميرا تتحرك ببطء</td></tr>
+          <tr><td>2</td><td>يد تخلط</td><td>حركة خلط طبيعية</td></tr>
+          <tr><td>3</td><td>إدخال الفرن</td><td>يد تضع الصينية</td></tr>
+          <tr><td>4</td><td>النتيجة النهائية</td><td>تقريب للطبق وبخار</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h3>مثال تطبيقي</h3>
+        <p>إذا الفيديو الأصلي عن كيك، لا تنسخي نفس الخلفية. اكتبي: أريد نفس نوع اللقطات لكن بديكور مطبخ فخم، رخام أبيض، إضاءة دافئة، بدون كتابة وبدون لوغو.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lesson" id="chatgpt">
+  <div class="lesson-head">
+    <span class="eyebrow">Step 3</span>
+    <h2>استخدمي ChatGPT لصناعة صور جديدة بنفس اللقطات</h2>
+    <p class="sub">هنا تحوّلين Shot List إلى صور جديدة تماماً. نفس الفكرة، لكن بهوية مختلفة.</p>
+  </div>
+  <div class="split">
+    <div class="visual">
+      <div class="visual-title"><span>Before → New Style</span><span>✨</span></div>
+      <div class="shot-grid">
+        <div class="shot"><div class="mini">🎥</div><strong>Reference</strong><small>فيديو أعجبك</small></div>
+        <div class="shot"><div class="mini">📝</div><strong>Prompt</strong><small>وصف اللقطة</small></div>
+        <div class="shot"><div class="mini">🖼️</div><strong>New Image</strong><small>ديكور جديد</small></div>
+        <div class="shot"><div class="mini">👑</div><strong>Nerol Style</strong><small>أسود/ذهبي/فاخر</small></div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="card">
+        <h3>برومبت جاهز للصورة</h3>
+        <div class="prompt">Create a realistic vertical food photography image based on this shot idea: [describe the shot]. 
+Change the background and styling completely: luxury modern kitchen, white marble countertop, warm cinematic lighting, elegant food styling, realistic hands, no text, no logos, no watermark, high detail, vertical 9:16.</div>
+      </div>
+      <div class="card">
+        <h3>مثال بالعربي</h3>
+        <div class="prompt ar-prompt">اصنع صورة عامودية واقعية للقطعة التالية: يد أنثى تخلط مكونات الوصفة في وعاء زجاجي. 
+غيّر الديكور بالكامل ليكون مطبخ فاخر، رخام أبيض، إضاءة دافئة، بدون كتابة، بدون لوغو، تفاصيل حقيقية، زاوية قريبة مناسبة لفيديو ريلز.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lesson" id="picasso">
+  <div class="lesson-head">
+    <span class="eyebrow">Step 4</span>
+    <h2>ارفعي كل صورة على بيكاسو الخليج وحوليها إلى فيديو</h2>
+    <p class="sub">كل صورة تتحول إلى لقطة فيديو قصيرة. لا تطلبي فيديو طويل مرة واحدة.</p>
+  </div>
+  <div class="split">
+    <div class="visual">
+      <div class="visual-title"><span>Picasso Screen</span><span>🤖</span></div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="video-thumb">صورة البداية<br>+</div>
+          <div class="video-ui">
+            <div class="ui-line"></div>
+            <div class="ui-line short"></div>
+            <div class="btn" style="width:100%;padding:10px">Generate Video</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="card">
+        <h3>ماذا تكتبين في وصف الفيديو؟</h3>
+        <div class="prompt">The camera slowly moves closer to the food. Natural steam rises. The hand gently pours sauce over the dish. Realistic movement, warm cinematic kitchen lighting, smooth close-up food video, professional TikTok/Reels style, no text, no logo.</div>
+      </div>
+      <div class="card">
+        <h3>وصف حسب نوع اللقطة</h3>
+        <ul class="check">
+          <li>لقطة مكونات: camera slowly pans over ingredients.</li>
+          <li>لقطة خلط: hand gently mixes ingredients in a bowl.</li>
+          <li>لقطة فرن: hands place tray into oven smoothly.</li>
+          <li>لقطة نهائية: slow zoom on final dish with steam.</li>
+        </ul>
+      </div>
+      <div class="note">نصيحة: ولّدي كل لقطة 2 مرات، واختاري النسخة الأنظف للحركة.</div>
+    </div>
+  </div>
+</section>
+
+<section class="lesson" id="capcut">
+  <div class="lesson-head">
+    <span class="eyebrow">Step 5</span>
+    <h2>اجمعي الفيديوهات في CapCut</h2>
+    <p class="sub">هنا يتحول كل شيء إلى فيديو واحد جاهز للنشر.</p>
+  </div>
+  <div class="split">
+    <div class="visual">
+      <div class="visual-title"><span>CapCut Timeline</span><span>✂️</span></div>
+      <div class="card" style="height:100%;display:flex;flex-direction:column;gap:12px;justify-content:center">
+        <div class="ui-line" style="height:34px;background:linear-gradient(90deg,#8f6b20,#2a1f0b,#8f6b20)"></div>
+        <div class="ui-line" style="height:34px;background:linear-gradient(90deg,#2a1f0b,#8f6b20,#2a1f0b)"></div>
+        <div class="ui-line" style="height:34px;background:linear-gradient(90deg,#8f6b20,#2a1f0b,#8f6b20)"></div>
+        <div class="note">Video 1 + Video 2 + Video 3 + Text + Music</div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="card">
+        <h3>ترتيب الفيديو داخل CapCut</h3>
+        <div class="step"><div class="num">1</div><div><strong>ابدئي بأقوى لقطة</strong><p>يفضل النتيجة النهائية أو لقطة سكب جذابة.</p></div></div>
+        <div class="step"><div class="num">2</div><div><strong>قصي الفراغ</strong><p>كل لقطة 1-3 ثواني فقط، لا تتركي بداية بطيئة.</p></div></div>
+        <div class="step"><div class="num">3</div><div><strong>أضيفي Text</strong><p>مثلاً: “Healthy dinner idea” أو “3 ingredients only”.</p></div></div>
+        <div class="step"><div class="num">4</div><div><strong>أضيفي موسيقى</strong><p>اختاري صوت ترند أو موسيقى ناعمة تناسب الأكل.</p></div></div>
+        <div class="step"><div class="num">5</div><div><strong>صدّري الفيديو</strong><p>1080p، عمودي 9:16، 30fps أو 60fps.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lesson" id="publish">
+  <div class="lesson-head">
+    <span class="eyebrow">Step 6</span>
+    <h2>اكتبي Hook + Caption وانشري</h2>
+    <p class="sub">آخر خطوة هي الكتابة. الكلمات تساعد الفيديو يوقف المشاهد ويتفاعل.</p>
+  </div>
+  <div class="split">
+    <div class="card">
+      <h3>Hooks جاهزة</h3>
+      <ul class="check">
+        <li>لازم تجربي هذه الوصفة اليوم!</li>
+        <li>وصفة فخمة بدون تعب وبمكونات بسيطة.</li>
+        <li>إذا عندك هذه المكونات، اعمليها فوراً.</li>
+        <li>فكرة عشاء صحي وسريع خلال دقائق.</li>
+        <li>احفظيها لأنك رح ترجعي لها لاحقاً.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Caption جاهز</h3>
+      <div class="prompt ar-prompt">وصفة سهلة وسريعة بطعم لذيذ وشكل فخم ✨
+
+مناسبة كفكرة عشاء أو سناك خفيف، وما تحتاج وقت طويل.
+
+احفظي الوصفة لتجربيها لاحقاً ❤️
+واكتبي لي: تحبي الوصفات الصحية ولا الحلويات أكثر؟</div>
+    </div>
+    <div class="card wide">
+      <h3>Checklist قبل النشر</h3>
+      <div class="grid">
+        <ul class="check">
+          <li>الفيديو عمودي 9:16</li>
+          <li>أول ثانية قوية</li>
+          <li>لا يوجد نص صغير أو غير واضح</li>
+          <li>الموسيقى مناسبة</li>
+        </ul>
+        <ul class="check">
+          <li>اللقطات سريعة ومترابطة</li>
+          <li>الكابشن فيه قيمة</li>
+          <li>في دعوة للحفظ أو التعليق</li>
+          <li>الغلاف جذاب وواضح</li>
+        </ul>
+        <ul class="danger">
+          <li>لا تنسخي فيديو أحد</li>
+          <li>لا تستخدمي لقطات مشوشة</li>
+          <li>لا تطولي المقدمة</li>
+          <li>لا تغيري الستايل بكل فيديو</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div>
+    <span class="eyebrow">Final Task</span>
+    <h2>مهمتك الآن</h2>
+    <p class="sub">اختاري فيديو وصفة يعجبك كمرجع، اكتبي Shot List، اصنعي صور جديدة بديكورك، حرّكي كل صورة في بيكاسو، اجمعيهم في CapCut، وانشري النتيجة. كرري هذه العملية 10 مرات حتى تبني ستايلك الخاص.</p>
+  </div>
+  <a class="btn" href="#top">العودة للبداية</a>
+</section>
+
+</main>
+<footer class="footer"><div class="wrap">NEROL AI ACADEMY — Starter Course 75€</div></footer>
+</body>
+</html>
